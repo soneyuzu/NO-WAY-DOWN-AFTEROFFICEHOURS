@@ -17,7 +17,7 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  overflow: hidden;
+  overflow: hidden; 
   overscroll-behavior: none;
   touch-action: manipulation;
   transition:
@@ -655,7 +655,7 @@
     font-size: var(--fs-body-md);
     font-weight: 400;
     font-style: normal;
-    color: var(--color-burgundy);
+    color: var(--color-ink);
   }
 
   .dossier-cat {
