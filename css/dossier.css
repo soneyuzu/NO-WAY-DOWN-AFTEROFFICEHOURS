@@ -432,7 +432,9 @@
   min-width: 96px;
   padding: var(--space-2) var(--space-3);
   border: 1px solid color-mix(in srgb, var(--color-brown) 55%, transparent);
-  font-family: "Courier New", Courier, monospace;
+  .dossier-nav button {
+  font-family: "Courier New", Courier, monospace !important;
+}
   font-size: var(--fs-micro);
   letter-spacing: 0.2em;
   color: var(--color-ink);
