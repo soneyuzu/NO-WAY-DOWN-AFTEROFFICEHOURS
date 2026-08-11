@@ -390,6 +390,8 @@
   flex: 1;
   min-height: 0;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
   padding-right: var(--space-2);
 
   font-family: "Courier New", Courier, monospace;
