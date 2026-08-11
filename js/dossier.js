@@ -189,13 +189,22 @@ export function createDossier(root, characters) {
   });
 
   const blockScroll = (event) => {
-    if (!root.classList.contains("is-open")) return;
-    const desc = event.target.closest?.(".description");
-    if (canScroll(desc)) return;
-    const column = event.target.closest?.(".dossier-text");
-    if (canScroll(column)) return;
-    event.preventDefault();
-  };
+  if (!root.classList.contains("is-open")) return;
+
+  // Normal character information
+  const desc = event.target.closest?.(".description");
+  if (canScroll(desc)) return;
+
+  // Background text
+  const background = event.target.closest?.("[data-background]");
+  if (canScroll(background)) return;
+
+  // Main character-info column
+  const column = event.target.closest?.(".dossier-text");
+  if (canScroll(column)) return;
+
+  event.preventDefault();
+};
   root.addEventListener("wheel", blockScroll, { passive: false });
   root.addEventListener("touchmove", blockScroll, { passive: false });
 
