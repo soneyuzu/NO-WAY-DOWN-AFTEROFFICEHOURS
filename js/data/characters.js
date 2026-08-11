@@ -6,7 +6,7 @@
 export const characters = [
   {
     name: "YEFIM",
-    role: "CEO'S SON",
+    role: "CHARACTER",
     age: "—",
     height: "—",
     status: "ACTIVE",
