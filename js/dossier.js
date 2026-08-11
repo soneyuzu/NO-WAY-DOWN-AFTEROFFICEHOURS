@@ -189,13 +189,18 @@ export function createDossier(root, characters) {
   });
 
   const blockScroll = (event) => {
-  if (!root.classList.contains("is-open")) return;
-  const desc = event.target.closest?.(".description");
-  if (canScroll(desc)) return;
-  const column = event.target.closest?.(".dossier-text");
-  if (canScroll(column)) return;
-  event.preventDefault();
-};
+    if (!root.classList.contains("is-open")) return;
+
+    // On mobile, BACKGROUND uses its own scrollable text element. Treat it
+    // like the description so the dialog's scroll guard does not cancel the
+    // touch gesture before the lore can scroll.
+    const scrollable = event.target.closest?.(
+      ".description, .dossier-background p, .dossier-text",
+    );
+    if (canScroll(scrollable)) return;
+
+    event.preventDefault();
+  };
   root.addEventListener("wheel", blockScroll, { passive: false });
   root.addEventListener("touchmove", blockScroll, { passive: false });
 
